@@ -1,3 +1,4 @@
 [
-	{ "caption": "Force Rewrite Sublime Settings", "command": "force_rewrite_sublime_settings" },
+    { "caption": "Force Rewrite Settings", "command": "force_rewrite_sublime_settings" },
+	{ "caption": "Force Reload Color Schemes", "command": "force_rewrite_sublime_settings" },
 ]

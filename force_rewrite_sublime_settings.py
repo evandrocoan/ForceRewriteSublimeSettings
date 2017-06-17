@@ -8,6 +8,7 @@ class ForceRewriteSublimeSettingsCommand( sublime_plugin.TextCommand ):
     def run( self, edit ):
 
         sublime.save_settings( 'Preferences.sublime-settings' )
+        sublime.save_settings( 'Package Control.sublime-settings' )
 
 
 
