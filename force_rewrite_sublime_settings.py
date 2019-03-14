@@ -28,22 +28,19 @@ class ForceRewriteSublimeSettingsCommand( sublime_plugin.TextCommand ):
 
 
 
-class ForceReloadSublimeColorScheme( sublime_plugin.TextCommand ):
+class ForceReloadSublimeSetting( sublime_plugin.TextCommand ):
 
-    def run( self, edit ):
-
-        views   = None
-        windows = sublime.windows()
+    def run( self, edit, setting_name, all_windows ):
+        print( "\nReloading '%s'" % setting_name, "setting..." )
+        views = None
+        windows = sublime.windows() if all_windows else [sublime.active_window()]
 
         for window in windows:
-
-            print( "\nWindow id: " + str( window.id() ) )
+            print( "\nWindow id:", window.id() )
             views = window.views()
 
             for view in views:
 
-                print( "\"" + "%-32s" % str( view.name() ) + "\": " + self.view.window().active_view().settings().get("color_scheme") )
-                view.settings().erase("color_scheme")
-
-
+                print( "\"%-32s" % view.name(), "\":", self.view.settings().get( setting_name ) )
+                view.settings().erase( setting_name )
 

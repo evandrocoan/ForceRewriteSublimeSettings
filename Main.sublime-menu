@@ -1,0 +1,25 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                ]
+            },
+            { "caption": "-", "id": "restore-scrool-view" },
+
+            { "caption": "Reload Syntaxes", "command": "force_reload_sublime_setting",
+                    "args": { "setting_name": "syntax", "all_windows": false } },
+
+            { "caption": "Reload Color Schemes", "command": "force_reload_sublime_setting",
+                    "args": { "setting_name": "color_scheme", "all_windows": true } },
+        ]
+    },
+]
