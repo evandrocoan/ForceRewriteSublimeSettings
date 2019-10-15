@@ -43,4 +43,4 @@ class ForceReloadSublimeSetting( sublime_plugin.TextCommand ):
 
                 print( "\"%-32s" % view.name(), "\":", self.view.settings().get( setting_name ), 'path:', view.file_name() )
                 view.settings().erase( setting_name )
-
+                view.run_command( "reset_view_syntax" )
